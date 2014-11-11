@@ -176,7 +176,13 @@ class Sphinxsearch
 		 * Perform the query.
 		 */
 		$results = $this->sphinx->query($query, $indexNames);
-		if( $results['status'] !== SEARCHD_OK )
+
+        /**
+         * If status is not ok and status is not ignored warning
+         * This is required for '@@relaxed' to work correctly since it returns a warning on non-existent fields
+         */
+        if( $results['status'] !== SEARCHD_OK && 
+            !($results['status'] == SEARCHD_WARNING && isset($options['ignore_warnings']) && $options['ignore_warnings']) )
 			throw new \RuntimeException(sprintf('Searching index "%s" for "%s" failed with error "%s".', $label, $query, $this->sphinx->getLastError()));
 
 		return $results;

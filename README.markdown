@@ -54,6 +54,7 @@ $indexesToSearch = array('Items');
 $options = array(
   'result_offset' => 0,
   'result_limit' => 25,
+  'ignore_warnings' => true, 
   'field_weights' => array(
     'Name' => 2,
     'SKU' => 3,
@@ -65,7 +66,7 @@ $sphinxSearch->setFilter('disabled', array(1), true);
 $searchResults = $sphinxSearch->search('search query', $indexesToSearch, $options);
 ```
 
-This would again search `Items` for `search query`, but now it will only return up to the first 25 matches and weight the `Name` and `SKU` fields higher than normal.  Note that in order to define a `result_offset` or a `result_limit`, you must explicitly define both values.  Also, this search will use [the Extended query syntax](http://sphinxsearch.com/docs/current.html#extended-syntax), and exclude all results with a `disabled` attribute set to 1.
+This would again search `Items` for `search query`, but now it will only return up to the first 25 matches and weight the `Name` and `SKU` fields higher than normal.  Note that in order to define a `result_offset` or a `result_limit`, you must explicitly define both values.  Also, this search will use [the Extended query syntax](http://sphinxsearch.com/docs/current.html#extended-syntax), and exclude all results with a `disabled` attribute set to 1. The ignore_warnings option is recommended if you plan on using the @@relaxed option, as it returns a warning when non-existent fields are referenced.
 
 
 
