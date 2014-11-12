@@ -1,8 +1,6 @@
 About SphinxsearchBundle
 ========================
 
-
-
 Installation:
 -------------
 
@@ -11,7 +9,19 @@ Installation:
 
 ### Step 1: Download the bundle
 
-How you actually download the bundle is entirely up to you.  The easiest way is to grab it from [packagist.org](http://packagist.org/).
+How you actually download the bundle is entirely up to you. Since I'm not sure how much time I'll be able to spend maintaining this bundle, I've opted to keep it as a VCS bundle for now and not put it on packagist. This may change in the future if there is enough interest. The relevant portions of composer.json are:
+
+``` JSON
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:spreston/Search-SphinxsearchBundle.git"
+        }
+    ],
+    "require": {
+        "search/sphinxsearch-bundle": "dev-master",
+    }
+```
 
 ### Step 2: Configure the bundle
 
@@ -30,7 +40,7 @@ sphinxsearch:
 
 At least one index must be defined, and you may define as many as you like.
 
-In the above sample configuration, `Categories` is used as a label for the index named `%sphinxsearch_index_categories%` (as defined in your `sphinxsearch.conf`).  This allows you to avoid having to hard code raw index names inside of your code.
+In the above sample configuration, `Categories` is used as a label for the index named `%sphinxsearch_index_categories%` (as defined in your `sphinxsearch.conf`).  This allows you to avoid having to hard code raw index names inside of your configuration.
 
 
 
@@ -74,7 +84,9 @@ License:
 --------
 
 ```
-Copyright (c) 2012, Ryan Rogers
+Copyright (c) 
+    2012, Ryan Rogers
+    2014, Steve Preston
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
