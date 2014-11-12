@@ -1,11 +1,15 @@
 {
-  "name": "search/sphinxsearch-bundle",
+  "name": "spreston/sphinxsearch-bundle",
   "type": "symfony-bundle",
-  "description": "Sphinx search bundle for Symfony 2",
+  "description": "Sphinx search bundle for Symfony 2. Forked from https://github.com/timewasted/Search-SphinxsearchBundle",
   "keywords": ["sphinx", "sphinxsearch", "symfony2"],
-  "homepage": "https://github.com/timewasted/Search-SphinxsearchBundle",
+  "homepage": "https://github.com/spreston/Search-SphinxsearchBundle",
   "license": "BSD-2-Clause",
   "authors": [
+    {
+      "name": "Steve Preston",
+      "email": "spreston@bcgtrans.com"
+    },
     {
       "name": "Ryan Rogers",
       "email": "ryan@timewasted.me"
