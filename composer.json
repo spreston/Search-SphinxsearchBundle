@@ -1,5 +1,5 @@
 {
-  "name": "spreston/sphinxsearch-bundle",
+  "name": "search/sphinxsearch-bundle",
   "type": "symfony-bundle",
   "description": "Sphinx search bundle for Symfony 2. Forked from https://github.com/timewasted/Search-SphinxsearchBundle",
   "keywords": ["sphinx", "sphinxsearch", "symfony2"],
